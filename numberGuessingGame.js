@@ -3,7 +3,15 @@ function NumberGuessingGame() {
   var guesses = [];
 
   do {
-    var guess = Number(prompt("I'm thinking of a number between 1 and 100. Try to guess my number below."));
+    var input = prompt("I'm thinking of a number between 1 and 100. Try to guess my number below.");
+      
+    if (input === null || input === '') {
+      alert("Stopping the game!");
+      return;
+    }
+    
+    var guess = Number(input);
+    
     if (guesses.indexOf(guess) !== -1) {
       alert("Oops, you already guessed " + guess + ". Guess a new number.");
     } else {
